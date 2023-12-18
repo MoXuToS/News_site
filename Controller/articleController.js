@@ -1,4 +1,4 @@
-const Models = require("../models/articleModel.js"); 
+const Models = require("../Models/articleModel.js"); 
 exports.addArticle = function (request, response){ 
     response.send("Добавление статьи");
 };

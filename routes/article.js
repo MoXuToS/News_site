@@ -1,5 +1,5 @@
 var express = require("express");
-const articleController = require("../controllers/articleController.js");
+const articleController = require("../Controller/articleController.js");
 var router = express.Router();
 var bodyParser = require('body-parser'); 
 const jsonParser = express.json();
