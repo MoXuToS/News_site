@@ -16,5 +16,5 @@ app.use('/article', article);
 let admin = require('./routes/admin.js');
 app.use('/admin', admin);
 
-app.use(express.static(__dirname + '/public'));
+
 app.listen(3000);
