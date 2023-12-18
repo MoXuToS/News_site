@@ -1,5 +1,5 @@
 {
-  "name": "ganin",
+  "name": "Dolgov Danila",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Racer790/node_task1.git"
   },
-  "author": "andrey",
+  "author": "Dolgov Danila",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Racer790/node_task1/issues"
