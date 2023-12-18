@@ -19,7 +19,7 @@ exports.addArticle = async function(req, res) {
 exports.editArticle = async function(req, res){
     await Models.editOne(req, body);
     let m = await Models.getOne(req.body.idArticle);
-    res.render('adminArticleShow', {data:m};)
+    res.render('adminArticleShow', {data:m});
 };
 
 exports.deleteArticle = async function(req, res){
