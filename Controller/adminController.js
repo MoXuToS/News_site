@@ -8,7 +8,7 @@ exports.getArticleAll = async function(req, res){
 exports.getArticle = async function(req, res) {
     let m = await Models.getOne(req.params.idArticle);
     res.render('adminArticleShow', {data:m});
-}
+};
 
 exports.addArticle = async function(req, res) {
     await Models.addOne(req.body);
