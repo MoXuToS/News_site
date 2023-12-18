@@ -7,13 +7,13 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
-let index = require('./routes/index');
+let index = require('./routes/index.js');
 app.use('/', index);
 
-let article = require('./routes/admin');
+let article = require('./routes/admin.js');
 app.use('/article', article);
 
-let admin = require('./routes/admin');
+let admin = require('./routes/admin.js');
 app.use('/admin', admin);
 
 
