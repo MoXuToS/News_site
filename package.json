@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Racer790/node_task1.git"
+    "url": "git+https://github.com/MoXuToS/News_site.git"
   },
   "author": "Dolgov Danila",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Racer790/node_task1/issues"
+    "url": "https://github.com/MoXuToS/News_site/issues"
   },
-  "homepage": "https://github.com/Racer790/node_task1#readme",
+  "homepage": "https://github.com/MoXuToS/News_site#readme",
   "devDependencies": {
     "body-parser": "^1.20.2",
     "ejs": "^3.1.9",
