@@ -1,6 +1,4 @@
-const { Connection } = require("mysql12/typings/mysql/lib/Connection");
 const connerction = require("../mysql.js");
-const { response } = require("express");
 
 exports.getAll = async function(req, res){
     let arr = [];
