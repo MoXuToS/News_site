@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
 const jsonParser = express.json();
 
+// comments for branch models
 router.get('/', adminController.getArticleAll);
 router.get('/:idArticle', adminController.getArticle);
 router.post('/addArticle', adminController.addArticle);
