@@ -1,9 +1,9 @@
 var express = require('express');
-const articleController = require("../controllers/articleController.js");
+const articleController = require("../Controller/articleController.js");
 var router = express.Router();
 var bodyParser = require('body-parser');
 var urlencodedParser = bodyParser.urlencoded({extended: false});
-const jsonParser = require("../controllers/homeController.js");
+const jsonParser = require("../Controller/homeController.js");
 
 
 router.get('/', articleController.getArticleAll);
