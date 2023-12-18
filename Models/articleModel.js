@@ -1,42 +1,42 @@
-const connerction = require("../mysql.js");
+const connection = require("../mysql.js")
 
-exports.getAll = async function(req, res){
+exports.getAll=async function(req,res){ 
     let arr=[];
-    await connerction.query("SELECT * FROM article")
-        .then(data=> {
-            console.log("data");
-            console.log(data);
-            for(let i=0; i<data[0].length; i++)
-            {
-                arr[i] = data[0][i];
-            }
+    await connection.query("SELECT * FROM article")
+    .then(data=> {
+        console.log("data"); 
+        console.log(data); 
+        for (let i=0;i<data[0].length;i++) 
+        {
+            arr[i]=data[0][i];
+        }  
     })
-        .catch(err =>{
-            console.log(err);
-        })
-        console.log("arr");
-        console.log(arr);
-        return arr;
+    .catch(err =>{
+        console.log(err);
+    });
+    console.log("arr");
+    console.log(arr); 
+    return arr;
 };
 
-exports.getOne = async function(req, res, idArticle){
+exports.getOne=async function(req,res,idArticle){
     let arr=[];
-    let sql = "select * from article where idArticle=?";
+    let sql="select * from article where idArticle=?";
     console.log(req);
     filter=[req];
     console.log(req);
-    await Connection.query(sql,filter)
+    await connection.query(sql, filter)
     .then(data=> {
-        console.log("data");
-        console.log(data);
-        for(let i = 0; i < data[0].length; i++)
+        console.log("data"); 
+        console.log(data); 
+        for (let i=0;i<data[0].length;i++)
         {
-            arr[i] = data[0][i];
+            arr[i]=data[0][i];
         }
     })
     .catch(err =>{
         console.log(err);
-    })
+    }); 
     console.log("arr");
     console.log(arr);
     return arr;
