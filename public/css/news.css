@@ -2,14 +2,16 @@
     Тело страницы
 */
 
-.wpapper {
+.wrapper{
     display: grid;
     grid-template-areas:
-    "nav_menu nav_menu nav_menu"
-    "news news ad";
+    "nav_menu nav_menu"
+    "news ad";
     text-align: center;
-    grid-template-columns: 0vw 5vw 17.25vw;
+    grid-template-columns: 80vw 18.25vw;
+    gap: 2vh;
 }
+
 body {
     background-color: #929A9E;
     font-family: Arial, Helvetica, sans-serif;
@@ -24,6 +26,7 @@ body {
 .news {
     grid-area: news;
     border: solid black 2px;
+    padding: 2vh;
 }
 
 .ad {
@@ -35,11 +38,10 @@ body {
 */
 
 #textArticle {
-    width: 50vw;
-    height: 40vh;
     background-color: #283E49;
     color: white;
     border: solid black 0.35vh;
     font-size: 2vh;
+    width: 77vw;
 }
 

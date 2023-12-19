@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/news.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <div class="wrapper">
@@ -16,7 +17,7 @@
             </table>
         </div>
         <div class="news">
-            <% data.forEach(function(item) { %>
+                        <% data.forEach(function(item) { %>
                 <p id="articlesTitle"><a href='http://localhost:3000/admin/<%= item.idArticle %>'><%= item.titleArticle %> </a></p>
                 <p id="articlesDescription">
                     <%= item.descriptionArticle %>
@@ -24,24 +25,25 @@
                 <% }); %>
             
                 <div class="form">
-                    <h2>Добавить статью</h2>
-            
-                <form action="http://localhost:3000/admin/addArticle" method="post"> 
-                    <label for="titleArticle">Название статьи</label> 
-                    <input type="text" name="titleArticle" id="titleArticle" required> 
-                    <p>
-                        <label for="textArticle">Текст статьи</label>
-                        <textarea rows="10" cols="30" id="textArticle"></textarea> 
-                    </p> 
-                    <p>
-                        <label for="descriptionArticle">Описание статьи</label>
-                        <input type="text" name="descriptionArticle" id="descriptionArticle">
-                    </p>
-                    <button type="submit" id="sendArticle">Создать статью</button> 
-                </form>
+                        <h2>Добавить статью</h2>
+                
+                    <form action="http://localhost:3000/admin/addArticle" method="post"> 
+                        <label for="titleArticle">Название статьи</label> 
+                        <input type="text" name="titleArticle" id="titleArticle" required> 
+                        <p>
+                            <label for="textArticle">Текст статьи</label>
+                            <textarea rows="10" cols="30" id="textArticle"></textarea> 
+                        </p> 
+                        <p>
+                            <label for="descriptionArticle">Описание статьи</label>
+                            <input type="text" name="descriptionArticle" id="descriptionArticle">
+                        </p>
+                        <button type="submit" id="sendArticle">Создать статью</button> 
+                    </form>
+                </div>
         </div>
         <div class="ad">
-            Здесь могла быть ваша рекоама
+            Здесь могла быть ваша реклама
         </div>
     </div>
     <script>
