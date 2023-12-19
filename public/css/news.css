@@ -1,0 +1,45 @@
+/*
+    Тело страницы
+*/
+
+.wpapper {
+    display: grid;
+    grid-template-areas:
+    "nav_menu nav_menu nav_menu"
+    "news news ad";
+    text-align: center;
+    grid-template-columns: 0vw 5vw 17.25vw;
+}
+body {
+    background-color: #929A9E;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.66vh;
+}
+
+.nav_menu {
+    grid-area: nav_menu;
+    border: solid black 2px;
+}
+
+.news {
+    grid-area: news;
+    border: solid black 2px;
+}
+
+.ad {
+    grid-area: ad;
+    border: solid black 2px;
+}
+/*
+    Работа по ID
+*/
+
+#textArticle {
+    width: 50vw;
+    height: 40vh;
+    background-color: #283E49;
+    color: white;
+    border: solid black 0.35vh;
+    font-size: 2vh;
+}
+
