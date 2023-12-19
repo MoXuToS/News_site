@@ -1,9 +1,9 @@
-const connection = require("../mysqlnews.js");
+const connection = require("../mysql.js");
 
 
 exports.getAll = async function (req,res){
     let arr=[];
-    await connection.query("SELECT * FROM article")
+    await connection.query("SELECT * FROM news")
     .then(data=> {
         for (let i=0;i<data[0].length;i++)
         {
@@ -18,7 +18,7 @@ exports.getAll = async function (req,res){
 
 exports.getOne = async function (req,res){ 
     let arr=[];
-    let sql="select * from article where idArticle=?";
+    let sql="select * from news where idnews=?";
     filter=[req];
     await connection.query(sql,filter)
     .then(data=> {
@@ -34,8 +34,8 @@ exports.getOne = async function (req,res){
 }
 exports.addOne = async function (req,res){
 
-    let sql="insert into article values('',?,?,?)";
-    filter=[req.titleArticle, req.textArticle, req.descriptionArticle];
+    let sql="insert into news values('',?,?,?)";
+    filter=[req.titlenews, req.textnews, req.descriptionnews];
     await connection.query(sql,filter)
     .then(data=> {
     })
@@ -45,8 +45,8 @@ exports.addOne = async function (req,res){
 } 
 exports.editOne = async function (req,res){
     let arr=[];
-    let sql="update article set titleArticle=?, textArticle=?, descriptionArticle=? where idArticle=?"; 
-    filter=[req.titleArticle, req.textArticle, req.descriptionArticle,+req.idArticle]; 
+    let sql="update news set titlenews=?, textnews=?, descriptionnews=? where idnews=?"; 
+    filter=[req.titlenews, req.textnews, req.descriptionnews,+req.idnews]; 
     await connection.query(sql,filter)
     .then(data=> {
         for (let i=0;i<data[0].length;i++)
@@ -62,7 +62,7 @@ exports.editOne = async function (req,res){
 exports.deleteOne = async function (req,res){
     console.log("model del");
     console.log(req)
-    let sql="delete from article where idArticle=?";
+    let sql="delete from news where idnews=?";
     filter=[req]; 
     await connection.query(sql,filter) 
     .then(response=> {

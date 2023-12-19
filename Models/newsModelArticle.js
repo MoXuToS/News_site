@@ -1,8 +1,8 @@
-const connection = require("../mysqlnews.js")
+const connection = require("../mysql.js")
 
 exports.getAll= async function (req,res){ 
     let arr=[];
-    await connection.query("SELECT * FROM article")
+    await connection.query("SELECT * FROM news")
     .then(data=> {
         console.log("data"); 
         console.log(data); 
@@ -19,9 +19,9 @@ exports.getAll= async function (req,res){
     return arr;
 };
 
-exports.getOne= async function (req,res,idArticle){
+exports.getOne= async function (req,res,idnews){
     let arr=[];
-    let sql="select * from article where idArticle=?";
+    let sql="select * from news where idnews=?";
     console.log(req);
     filter=[req];
     console.log(req);
