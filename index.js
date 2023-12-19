@@ -12,4 +12,8 @@ let article = require('./routes/article');
 app.use('/article', article);
 let admin = require('./routes/admin');
 app.use('/admin', admin);
+let newsAdmin = require('./routes/adminNews');
+app.use('/newsAdmin', newsAdmin);
+let news = require('./routes/articleNews');
+app.use('/news', news);
 app.listen(3000);
