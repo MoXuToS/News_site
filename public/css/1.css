@@ -5,4 +5,19 @@ body {
 
 form {
     border: solid 0.25vh #AA938E;
+    width: 30vw;
+}
+textarea {
+    margin-left: 1vw;
+    margin-top: 1vh;
+    width: 28vw
+}
+
+#titleArticle {
+    margin-top: 0.5vh;;
+}
+
+#sendArticle {
+    margin-bottom: 1vh;
+    margin-left: 12vw;
 }
