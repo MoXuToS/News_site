@@ -5,8 +5,6 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false });
 const jsonParser = express.json();
 const homeController = require("../Controller/homeController.js");
 
-
 router.get('/',homeController.getIndex);
-
 
 module.exports = router;

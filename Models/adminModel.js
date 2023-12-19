@@ -1,7 +1,7 @@
 const connection = require("../mysql.js");
 
 
-exports.getAll=async function(req,res){
+exports.getAll = async function (req,res){
     let arr=[];
     await connection.query("SELECT * FROM article")
     .then(data=> {
@@ -16,7 +16,7 @@ exports.getAll=async function(req,res){
     return arr;
 };
 
-exports.getOne=async function(req,res){ 
+exports.getOne = async function (req,res){ 
     let arr=[];
     let sql="select * from article where idArticle=?";
     filter=[req];
@@ -32,7 +32,7 @@ exports.getOne=async function(req,res){
     });
     return arr;
 }
-exports.addOne=async function(req,res){
+exports.addOne = async function (req,res){
 
     let sql="insert into article values('',?,?,?)";
     filter=[req.titleArticle, req.textArticle, req.descriptionArticle];
@@ -43,7 +43,7 @@ exports.addOne=async function(req,res){
         console.log(err);
     });
 } 
-exports.editOne=async function(req,res){
+exports.editOne = async function (req,res){
     let arr=[];
     let sql="update article set titleArticle=?, textArticle=?, descriptionArticle=? where idArticle=?"; 
     filter=[req.titleArticle, req.textArticle, req.descriptionArticle,+req.idArticle]; 
@@ -59,7 +59,7 @@ exports.editOne=async function(req,res){
     });
     return arr;
 }
-exports.deleteOne=async function(req,res){
+exports.deleteOne = async function (req,res){
     console.log("model del");
     console.log(req)
     let sql="delete from article where idArticle=?";
