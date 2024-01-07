@@ -13,7 +13,7 @@
     </div>
     <div class="form">
         <h2>Изменить статью</h2>
-        <form id="editArticleForm" action="http://localhost:3000/admin/editArticle" method="post">
+        <form id="editArticleForm" action="http://localhost:3000/adminNews/editArticle" method="post">
             <label for="titleArticle">Название статьи</label>
             <input type="text" name="titleArticle" id="titleArticle" required value="<%= data[0].titleArticle %>">
             <p>
@@ -26,7 +26,7 @@
             </p>
             <button type="submit" id="sendArticle">Редактировать статью</button>
             <button type="button" id="deleteArticle">Удалить статью</button>
-            <p><a href="http://localhost:3000/admin/">Вернуться к списку статей</a></p>
+            <p><a href="http://localhost:3000/adminNews/">Вернуться к списку статей</a></p>
         </form>
     </div>
     <script>
@@ -40,7 +40,7 @@
             };
 
             try {
-                const response = await fetch('http://localhost:3000/admin/editArticle', {
+                const response = await fetch('http://localhost:3000/adminNews/editArticle', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json;charset=utf-8'
@@ -52,7 +52,7 @@
                     alert("Данные изменены");
 
                     // Загрузка обновленных данных и их отображение на странице
-                    const updatedDataResponse = await fetch(`http://localhost:3000/article/${article.idArticle}`);
+                    const updatedDataResponse = await fetch(`http://localhost:3000/news/${article.idArticle}`);
                     const updatedData = await updatedDataResponse.text();
 
                     // Замена содержимого элемента с id "articleContent" на обновленные данные
@@ -73,14 +73,14 @@
             let article = {
                 'idArticle': location.href.split("/").at(-1),
             };
-            let promise = fetch('http://localhost:3000/admin/deleteArticle', {
+            let promise = fetch('http://localhost:3000/adminNews/deleteArticle', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
                 },
                 body: JSON.stringify(article)
             })
-                .then(response => document.location = "http://localhost:3000/admin/")
+                .then(response => document.location = "http://localhost:3000/adminNews/")
                 .catch((error) => {
                     console.log(error);
                 });

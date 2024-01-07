@@ -9,6 +9,7 @@
     "news ad";
     text-align: center;
     grid-template-columns: 80vw 18.25vw;
+    grid-template-rows: 5vh 90vh;
     gap: 2vh;
 }
 
@@ -18,6 +19,26 @@ body {
     font-size: 1.66vh;
 }
 
+h2 {
+    font-size: 3vh;
+}
+
+li {
+    padding-right: 1vw;
+    margin-top: 1vh;
+}
+
+input {
+    width: 50vw;
+    height: 3vh;
+    background-color: #283E49;
+    color: white;
+}
+
+button {
+    color: white;
+    background-color: #080b0c;
+}
 .nav_menu {
     grid-area: nav_menu;
     border: solid black 2px;

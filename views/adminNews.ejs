@@ -8,7 +8,7 @@
 <body>
     <div class="wrapper">
         <div class="nav_menu">
-            <table>
+            <table id="navigation">
                 <tr>
                     <th>Company</th>
                     <th>Contact</th>
@@ -18,7 +18,7 @@
         </div>
         <div class="news">
                         <% data.forEach(function(item) { %>
-                <p id="articlesTitle"><a href='http://localhost:3000/admin/<%= item.idArticle %>'><%= item.titleArticle %> </a></p>
+                <p id="articlesTitle"><a href='http://localhost:3000/adminNews/<%= item.idArticle %>'><%= item.titleArticle %> </a></p>
                 <p id="articlesDescription">
                     <%= item.descriptionArticle %>
                 </p> 
@@ -27,12 +27,12 @@
                 <div class="form">
                         <h2>Добавить статью</h2>
                 
-                    <form action="http://localhost:3000/admin/addArticle" method="post"> 
+                    <form action="http://localhost:3000/adminNews/addArticle" method="post"> 
                         <label for="titleArticle">Название статьи</label> 
                         <input type="text" name="titleArticle" id="titleArticle" required> 
                         <p>
                             <label for="textArticle">Текст статьи</label>
-                            <textarea rows="10" cols="30" id="textArticle"></textarea> 
+                            <textarea rows="25" cols="30" id="textArticle"></textarea> 
                         </p> 
                         <p>
                             <label for="descriptionArticle">Описание статьи</label>
@@ -43,7 +43,13 @@
                 </div>
         </div>
         <div class="ad">
-            Здесь могла быть ваша реклама
+            <ul>
+                <li>Получите незабываемый вкус свежести с нашими эксклюзивными фруктовыми смузи! Натуральные ингредиенты, богатые витаминами и минералами, обеспечат вам энергией на весь день. Попробуйте уже сегодня и почувствуйте разницу!</li>
+                <li>Устали от скучных обедов? Попробуйте наши горячие блюда на основе свежих овощей! Здоровый выбор для занятых людей, которые ценят свое время и здоровье. Закажите прямо сейчас и наслаждайтесь вкусом и пользой!</li>
+                <li>Пришло время обновить свою гардеробную! Откройте для себя нашу коллекцию модной одежды для мужчин и женщин. Высокое качество материалов, современные тренды и умеренные цены – все, что вам нужно для стильного образа. Покупайте с умом и выглядите безупречно!</li>
+                <li>Хотите почувствовать себя настоящим профессионалом? Наша новая коллекция стильных и функциональных часов поможет вам выделиться из толпы. Безупречный дизайн, надежность и точность – все, что нужно для успешного человека. Подчеркните свой стиль уже сегодня!</li>
+                <li>Хотите сохранить молодость и красоту вашей кожи? Попробуйте нашу новую линию ухода за кожей лица. Уникальные формулы, богатые активными компонентами, помогут вам избавиться от морщин, улучшить текстуру кожи и вернуть ей здоровое сияние. Не упустите возможность быть настоящей красавицей!</li>
+              </ul>
         </div>
     </div>
     <script>
@@ -55,7 +61,7 @@
                 'textArticle':document.querySelector("#textArticle").value, 
                 'descriptionArticle':document.querySelector("#descriptionArticle").value,
         }
-        let promise=fetch('http://localhost:3000/admin/addArticle',{
+        let promise=fetch('http://localhost:3000/adminNews/addArticle',{
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json;charset=utf-8'
